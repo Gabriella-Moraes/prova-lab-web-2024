@@ -11,25 +11,34 @@
         <h1>Tela de Consulta</h1>
         <table class="table">
             <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Ações</th>
+                 <tr>
+                    <td class="bg-primary text-white text-center" scope="col">Nome</td>
+                    <td class="bg-primary text-white text-center" scope="col">Endereço</td>
+                    <td class="bg-primary text-white text-center" scope="col">Bairro</td>
+                    <td class="bg-primary text-white text-center" scope="col">CEP</td>
+                    <td class="bg-primary text-white text-center" scope="col">Cidade</td>
+                    <td class="bg-primary text-white text-center" scope="col">Estado</td>
+                    <td class="bg-primary text-white text-center" scope="col"></td>
+                    <td class="bg-primary text-white text-center" scope="col"></td>
+                    <td class="bg-primary text-white text-center" scope="col"></td>
+
                 </tr>
             </thead>
             <tbody>
                 {{#each post}}
-                {{#dataValues}}
-                <tr>
-                    <td>{{this.nome}}</td>
-                    <td>{{this.telefone}}</td>
-                    <td>
-                        <button class="btn btn-primary"><a href="/editar/{{this.id}}" style="color:inherit"></a>Editar</button>
-                        <button class="btn btn-danger"><a href="/excluir/{{this.id}}" style="color:inherit"></a>Excluir</button>
-                    </td>
-                </tr>
-                {{/dataValues}}
-                {{/each}}
+                    {{#dataValues}}
+                        <tr>
+                            <td class="text-center">{{nome}}</td>
+                            <td class="text-center">{{endereco}}</td>
+                            <td class="text-center">{{bairro}}</td>
+                            <td class="text-center">{{cep}}</td>
+                            <td class="text-center">{{cidade}}</td>
+                            <td class="text-center">{{estado}}</td>
+                            <td><a type="button" class="btn btn-warning" href="/editar/{{id}}">Editar</a></td>
+                            <td><a type="reset" class="btn btn-danger" href="/excluir/{{id}}">Excluir</a></td>
+                        </tr>
+                  {{/dataValues}}
+                {{/each}}  
             </tbody>
         </table>
     </div>

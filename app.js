@@ -79,7 +79,7 @@ app.post("/atualizar", function (req, res) {
 
 app.get("/excluir/:id", function (req, res) {
   post.destroy({ where: { "id": req.params.id } }).then(function () {
-    res.render("index")
+    res.render("cadastro")
     console.log("excluído com sucesso!")
   }).catch(function (erro) {
     console.log("Erro: não excluído!" + erro)
